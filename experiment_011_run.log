@@ -1,0 +1,73 @@
+QUESINE Experiment 011: held-out-seed meta-router evaluation
+Seed 0 (train)
+Seed 1 (train)
+Seed 2 (train)
+Seed 3 (train)
+Seed 4 (train)
+Seed 5 (train)
+Seed 6 (train)
+Seed 7 (train)
+Seed 8 (train)
+Seed 9 (train)
+Seed 10 (train)
+Seed 11 (train)
+Seed 12 (train)
+Seed 13 (train)
+Seed 14 (train)
+Seed 15 (TEST)
+Seed 16 (TEST)
+Seed 17 (TEST)
+Seed 18 (TEST)
+Seed 19 (TEST)
+
+40 episodes, 5 held-out seeds, one replay method
+Router                         Acc*   Correct*    Routed    Regret
+Learned RF                  100.00%      37/37    0.5717    0.0000
+Hardcoded 5pp (Support)      62.16%      23/37    0.4144    0.1573
+Always-Teacher               40.54%      15/37    0.4061    0.1656
+Always-Head                  59.46%      22/37    0.3923    0.1794
+* Routing accuracy excludes query-performance ties; routed score includes all rows.
+
+Per-seed RF results:
+Seed 15: routed_mean=0.6152, correct=6/6, ties=2
+Seed 16: routed_mean=0.5850, correct=8/8, ties=0
+Seed 17: routed_mean=0.5205, correct=7/7, ties=1
+Seed 18: routed_mean=0.5342, correct=8/8, ties=0
+Seed 19: routed_mean=0.6035, correct=8/8, ties=0
+
+Paired seed comparison, RF minus Hardcoded 5pp:
+{
+  "seed_differences": [
+    {
+      "seed": 15,
+      "delta": 0.19580078125
+    },
+    {
+      "seed": 16,
+      "delta": 0.216796875
+    },
+    {
+      "seed": 17,
+      "delta": 0.17626953125
+    },
+    {
+      "seed": 18,
+      "delta": 0.10791015625
+    },
+    {
+      "seed": 19,
+      "delta": 0.08984375
+    }
+  ],
+  "mean_seed_delta": 0.15732421875,
+  "wins": 5,
+  "losses": 0,
+  "ties": 0,
+  "one_sided_sign_p": 0.03125,
+  "inference": "Conditional on the fixed task suite, queries, and fitted router"
+}
+
+Feature importances: {'teacher_best_bit': 0.46994233264975943, 'teacher_second_bit': 0.26660832851677857, 'teacher_margin': 0.16215775886268763, 'head_train_bit': 0.06370815366371572, 'head_train_vector': 0.03758342630705859}
+Same task definitions appear in meta-training and evaluation; this tests new seeds.
+Evaluation uses 5 seeds; significance is not proof.
+Results saved to /workspace/outputs/experiment_011_results.json

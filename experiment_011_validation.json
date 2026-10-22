@@ -1,0 +1,66 @@
+{
+  "environment": {
+    "python": "3.12.12",
+    "numpy": "2.5.3",
+    "torch": "2.14.1+cpu",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  },
+  "protocol_regression_tests": {
+    "passed": 7,
+    "failed": 0
+  },
+  "neural_smoke": {
+    "passed": true,
+    "train_seeds": [
+      0,
+      1
+    ],
+    "test_seeds": [
+      15
+    ],
+    "backbone_steps_per_task": 5,
+    "head_steps_per_task": 5,
+    "evaluation_rows": 8
+  },
+  "full_experiment_run": true,
+  "full_experiment": {
+    "passed": true,
+    "completed_utc": "2026-10-22T05:53:29.470493+00:00",
+    "train_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "test_seeds": [
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "backbone_steps_per_task": 250,
+    "head_steps_per_task": 250,
+    "meta_train_episodes": 120,
+    "evaluation_rows": 40,
+    "non_tied_evaluation_rows": 37,
+    "saved_metrics_independently_recomputed": true,
+    "source_sha256": {
+      "experiment_011.py": "453ee41f97065a3d3569703a9c54816a5733be5117b45814b5c4ac0d7bccc239",
+      "experiment_011_protocol.py": "6ab4b25eed9a2704edcb765273737672f93de43e58dfbf4b94055696e12d7c21"
+    },
+    "results_sha256": "91324a7cc695d996a45a0f10bdf81913cf2428316f3dd8016e796c2cf05e69c2"
+  }
+}
